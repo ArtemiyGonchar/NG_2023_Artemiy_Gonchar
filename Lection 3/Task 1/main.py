@@ -1,7 +1,7 @@
 usrf = input("Enter file to open: ")
 unicval = {}
-with open(usrf, "r") as f:
-    for lines in f:
-        for i in lines:
-            unicval[i] = unicval.get(i, 0) + 1
+with open(usrf, "r") as filehandle:
+    for lines in filehandle:
+        for charac in lines:
+            unicval[charac] = unicval.get(charac, 0) + 1
 print (unicval)
