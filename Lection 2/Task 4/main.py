@@ -1,6 +1,6 @@
-st = input("Enter your message: ")
-stclear = ''
-for i in st.lower():
-    if i in "aeyuoi":
-        stclear += i
-print (stclear)
+string = input("Enter your message: ")
+stringClear = ''
+for character in string.lower():
+    if character in "aeyuoi":
+        stringClear += character
+print (stringClear)
