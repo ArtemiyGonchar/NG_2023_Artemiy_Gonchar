@@ -1,6 +1,6 @@
-usrf = input("Enter file to open: ")
-unicval = {}
-with open(usrf, "r") as filehandle:
-    for charac in filehandle.read():
-        unicval[charac] = unicval.get(charac, 0) + 1
-print (unicval)
+userFile = input("Enter file to open: ")
+uniqueValues = {}
+with open(userFile, "r") as filehandle:
+    for character in filehandle.read():
+        uniqueValues[character] = uniqueValues.get(character, 0) + 1
+print (uniqueValues)
