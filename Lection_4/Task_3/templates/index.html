@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="buttonsForm" action='/' method="get">
+        <button type="button" id="next" onclick="submitForm('next')">Next</button>
+        <button type="button" id="previous" onclick="submitForm('previous')">Previous</button>
+        <input type="hidden" id="imageInput" name="image" value="{{ data }}">
+        <input type="hidden" id="actionInput" name="action" value="">
+    </form>
+
+    <script>
+        function submitForm(action) {
+            document.getElementById('actionInput').value = action;
+            document.getElementById('buttonsForm').submit();
+        }
+    </script>
+
+    <img src="{{ url_for('static', filename='images/' + data ) }}"/>
+</body>
+</html>
