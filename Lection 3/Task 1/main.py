@@ -1,6 +1,7 @@
 userFile = input("Enter file to open: ")
 uniqueValues = {}
 with open(userFile, "r") as filehandle:
-    for character in filehandle.read():
-        uniqueValues[character] = uniqueValues.get(character, 0) + 1
+    dataText = filehandle.read()
+    for character in dataText:
+        uniqueValues[character] = dataText.count(character)
 print (uniqueValues)
