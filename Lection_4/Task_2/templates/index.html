@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game</title>
+</head>
+<body>
+    <h4>Walk with @! (There are borders)</h4>
+    {%for writeLine in table %}
+    <p>{{ writeLine }}</p>
+    {% endfor %}
+    <form id="buttonsForm" action='/' method="get">
+        <button type="button" id="up" onclick="submitForm('up')">Up</button>
+        <button type="button" id="down" onclick="submitForm('down')">Down</button>
+        <button type="button" id="left" onclick="submitForm('left')">Left</button>
+        <button type="button" id="right" onclick="submitForm('right')">Right</button>
+        <input type="hidden" id="actionInput" name="action" value="">
+    </form>
+
+    <script>
+        function submitForm(action) {
+            document.getElementById('actionInput').value = action;
+            document.getElementById('buttonsForm').submit();
+        }
+    </script>
+</body>
+</html>
