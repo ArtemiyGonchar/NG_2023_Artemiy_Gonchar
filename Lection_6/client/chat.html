@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+</head>
+<body>
+    <h3>User: {{ username }}</h3>
+    <form action="http://127.0.0.1:5000/send_message">
+        <br>
+        Message: <input type="text" name="message" />
+        <br>
+        <button>Send</button>
+    </form>
+    <div id="chat"></div>
+</body>
+<script>
+    function getChat() {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            document.getElementById("chat").innerHTML = this.responseText;
+        }
+        xhttp.open("GET", "http://127.0.0.1:5000/getAll");
+        xhttp.send();
+    }
+    window.setInterval(() => {
+        getChat();
+    }, 1000);
+</script>
+</html>
